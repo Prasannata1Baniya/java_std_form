@@ -1,17 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Registration Portal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .form-container h2 {
+            color: #333333;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .form-container p {
+            color: #666666;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #495057;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input[type="text"]:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.85rem;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background-color: #357abd;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
 </head>
 <body>
- <form method="post" action="StudentServlet">
-   Name: <input type="text" name="name">
-   City: <input type="text" name="city">
-   
-   
-   <input type="submit" value="submit">
-   </form>
-   
+
+    <div class="form-container">
+        <h2>Register Company</h2>
+        <p>Enter details below to save the information into the system.</p>
+        
+        <form method="post" action="StudentServlet">
+            <div class="form-group">
+                <label for="name">Company Name</label>
+                <input type="text" id="name" name="comp_name" placeholder="e.g. Microsoft" required autocomplete="off">
+            </div>
+            
+            <div class="form-group">
+                <label for="city">City Location</label>
+                <input type="text" id="city" name="city" placeholder="e.g. New York" required autocomplete="off">
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Details</button>
+        </form>
+    </div>
+
 </body>
 </html>
